@@ -4,17 +4,20 @@ import * as mongoose from 'mongoose';
 import environment from '../environment';
 import { CommonRoutes } from './../routes/common-routes';
 import { BookRoutes } from './../routes/book-routes';
+import { UserRoutes } from '../routes/user-routes';
 
 class App {
   public app: express.Application;
   public mongoUrl: string = 'mongodb://localhost/' + environment.getDBName();
   private commonRoutes: CommonRoutes = new CommonRoutes();
   private bookRoutes: BookRoutes = new BookRoutes();
+  private userRoutes: UserRoutes = new UserRoutes();
   constructor() {
     this.app = express();
     this.config();
     this.initMongoConnection();
     this.bookRoutes.route(this.app);
+    this.userRoutes.route(this.app);
     this.commonRoutes.route(this.app);
   }
 

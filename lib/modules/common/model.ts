@@ -4,7 +4,7 @@ export interface ModificationNote {
   modificationNote: String;
 }
 
-export const ModificationNote = {
+export const modificationNote = {
   modifiedOn: Date,
   modifiedBy: String,
   modificationNote: String

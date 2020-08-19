@@ -3,32 +3,32 @@ import { ResponseStatusCodes } from './model';
 
 export function successResponse(message: string, data: any, res: Response) {
   res.status(ResponseStatusCodes.Success).json({
-    STATUS: 'SUCCESS',
-    MESSAGE: message,
-    DATA: data
+    status: 'SUCCESS',
+    message: message,
+    data: data
   })
 }
 
 export function failureResponse(message: string, data: any, res: Response) {
   res.status(ResponseStatusCodes.Success).json({
-    STATUS: 'FAILURE',
-    MESSAGE: message,
-    DATA: data
+    status: 'FAILURE',
+    message: message,
+    data: data
   })
 }
 
 export function insufficientParameters(res: Response) {
   res.status(ResponseStatusCodes.BadRequest).json({
-    STATUS: 'FAILURE',
-    MESSAGE: 'Insufficient Parameters',
-    DATA: {}
+    status: 'FAILURE',
+    message: 'Insufficient Parameters',
+    data: {}
   })
 }
 
 export function mongoError(error: any, res: Response) {
   res.status(ResponseStatusCodes.InternalServerError).json({
-    STATUS: 'FAILURE',
-    MESSAGE: 'MongoDB Error',
-    DATA: error
+    status: 'FAILURE',
+    message: 'MongoDB Error',
+    data: error
   })
 }
