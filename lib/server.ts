@@ -1,5 +1,7 @@
 import app from './config/app';
-const PORT = 8000;
+import env from './environment';
+
+const PORT = env.getPort();
 app.listen(PORT, () => {
   console.log('Server up & running from port, ' + PORT);
 })
