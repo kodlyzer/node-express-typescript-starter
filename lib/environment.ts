@@ -1,8 +1,8 @@
 enum Environments {
-  localEnv = 'local',
-  devEnv = 'dev',
-  prodEnv = 'prod',
-  qaEnv = 'qa'
+  LocalEnv = 'local',
+  DevEnv = 'dev',
+  ProdEnv = 'prod',
+  QaEnv = 'qa'
 }
 
 class Environment {
@@ -14,11 +14,11 @@ class Environment {
 
   getPort(): Number {
     switch (this.environment) {
-      case Environments.prodEnv:
+      case Environments.ProdEnv:
         return 8081;
-      case Environments.devEnv:
+      case Environments.DevEnv:
         return 8082;
-      case Environments.qaEnv:
+      case Environments.QaEnv:
         return 8083;
       default:
         return 8000;
@@ -27,11 +27,11 @@ class Environment {
 
   getDBName(): String {
     switch (this.environment) {
-      case Environments.prodEnv:
+      case Environments.ProdEnv:
         return 'tProdDb';
-      case Environments.devEnv:
+      case Environments.DevEnv:
         return 'tDevDb';
-      case Environments.qaEnv:
+      case Environments.QaEnv:
         return 'tQaDb';
       default:
         return 'tLocalDb';
@@ -39,4 +39,4 @@ class Environment {
   }
 }
 
-export default new Environment(Environments.localEnv);
+export default new Environment(Environments.LocalEnv);
